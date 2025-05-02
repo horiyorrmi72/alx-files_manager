@@ -27,17 +27,19 @@ export default class AuthController {
   }
 
   static async getDisconnect(req, res) {
-    const token = req.headers['X-Token'];
+    const token = req.headers['x-token'];
     if (!token) {
-      return res.status(401).send('Unauthorized');
+      return res.status(401).json({ error: 'Unauthorized' });
     }
 
     const key = `auth_${token}`;
     const userId = await redisClient.get(key);
+
     if (!userId) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
-    await redisClient.del(`auth_${token}`);
-    return res.status(204);
+
+    await redisClient.del(key);
+    return res.status(204).send();
   }
 }
