@@ -4,8 +4,8 @@ import path from 'path';
 // import mime from 'mime-types';
 // import { ObjectId } from 'mongodb';
 import pkg from 'mongodb';
-import dbClient from '../utils/db.js';
-import redisClient from '../utils/redis.js';
+import dbClient from '../utils/db';
+import redisClient from '../utils/redis';
 
 const { ObjectId } = pkg;
 

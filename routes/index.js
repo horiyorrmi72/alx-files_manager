@@ -1,9 +1,8 @@
 import express from 'express';
-import AppController from '../controllers/AppController.js';
-import UsersController from '../controllers/UsersController.js';
-import AuthController from '../controllers/AuthController.js';
-import FilesController from '../controllers/FilesController.js';
-
+import AppController from '../controllers/AppController';
+import UsersController from '../controllers/UsersController';
+import AuthController from '../controllers/AuthController';
+import FilesController from '../controllers/FilesController';
 
 const router = express.Router();
 
@@ -17,6 +16,6 @@ router.get('/connect', AuthController.getConnect);
 router.get('/disconnect', AuthController.getDisconnect);
 router.post('/files', FilesController.postUpload);
 router.get('/files/:id', FilesController.getShow);
-router.get('/files', FilesController.getIndex)
+router.get('/files', FilesController.getIndex);
 
 export default router;
