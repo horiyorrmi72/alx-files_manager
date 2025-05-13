@@ -2,7 +2,6 @@ import express from 'express';
 // eslint-disable-next-line import/extensions
 import route from './routes/index.js';
 
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
