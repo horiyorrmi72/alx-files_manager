@@ -1,6 +1,6 @@
-import route from './routes/index';
+import route from './routes/index.js';
 
-const express = require('express');
+import express from 'express';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,4 +11,4 @@ app.listen(PORT, () => {
 });
 app.use('/', route);
 
-module.exports = app;
+export default app;
